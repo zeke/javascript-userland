@@ -1,0 +1,15 @@
+<div data-parent="home">
+  <h1 class="uppercase">Javascript Userland</h1>
+
+  <script src="../vendor/starfield.js"></script>
+  <script>
+    var container = document.getElementById('home')
+    var starfield = new Starfield()
+    starfield.stars = 800
+    starfield.minVelocity = 5
+    starfield.maxVelocity = 60
+    starfield.maxDiameter = 10
+    starfield.initialise(container)
+    starfield.start()
+  </script>
+</div>

@@ -1,0 +1,55 @@
+<div data-parent="apps">
+
+  <template id="app-template">
+    <a class="app">
+      <img>
+      <p></p>
+    </a>
+  </template>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const apps = require('electron-apps')
+      const template = document.getElementById("app-template")
+      apps.forEach(app => {
+        const el = document.importNode(template.content, true)
+        el.querySelector('img').setAttribute('src', app.datauri)
+        el.querySelector('p').textContent = app.name
+        document.querySelector('#apps').appendChild(el)
+      })
+    })
+  </script>
+
+  <style>
+    #apps {
+      float: none;
+      clear: both;
+      overflow: hidden;
+    }
+
+    .app {
+      float: left;
+      display: block;
+      width: 5vw;
+      height: 5vh;
+      margin: 1vw;
+      background: white;
+      position: relative;
+    }
+
+    .app img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .app p {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-size: 1em;
+      opacity: 0;
+    }
+  </style>
+
+</div>

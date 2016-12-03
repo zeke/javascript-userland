@@ -1,0 +1,33 @@
+<div data-parent="camera">
+  <video></video>
+
+  <script>
+    navigator.webkitGetUserMedia({video: true},
+      function(stream) {
+        let el = document.querySelector('#camera video')
+        el.src = URL.createObjectURL(stream)
+      },
+      function() {
+        console.error('could not connect to webcam')
+      }
+    )
+  </script>
+
+  <style>
+    #camera {
+      background: rgb(255, 237, 0);
+    }
+
+    #camera video {
+      width: 100%;
+      height: 100%;
+    }
+
+    #camera video {
+      mix-blend-mode: multiply;
+      -webkit-filter: saturate(0) contrast(2) brightness(4);
+      opacity: 0.5;
+    }
+  </style>
+
+</div>

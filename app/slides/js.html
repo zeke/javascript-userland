@@ -1,0 +1,31 @@
+<div data-parent="js">
+  <figure>
+    <img src="images/js-logo-transparent.svg">
+  </figure>
+
+  <style>
+    #js {
+      background: #f7df1e;
+    }
+
+    #js.active img {
+      animation: starwars linear 10s forwards;
+      /*animation-direction: alternate;
+      animation-iteration-count: infinite;*/
+      /*transform-origin: 50% 50%;*/
+    }
+
+    @keyframes starwars{
+      0% {
+        transform: perspective(300px) rotateX(55deg) translate(0,80vh) scale(1.7);
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: perspective(300px) rotateX(55deg) translate(0,-80vh) scale(0.3);
+      }
+    }
+  </style>
+</div>

@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'gidole';
+  src: url('fonts/gidolinya-regular.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DIN Condensed', 'gidole';
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #333;
+  color: #FFF;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  /*display: none;*/
+}
+
+section.active {
+  display: block;
+}
+
+section > video {
+  width: 100%;
+  height: 100%;
+}
+
+aside {
+  display: none;
+  font-family: 'helvetica neue', helvetica, arial;
+  text-align: center;
+}
+
+/*section.active aside {
+  display: block;
+}*/
+
+figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+figure img, figure video {
+  max-height: 60vh;
+  max-width: 80vw;
+  width: auto;
+  height: auto;
+}
+
+pre {
+  text-align: left;
+}
+
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Monaco, Courier, monospace;
+  line-height: 1.4;
+  font-size: 4vw;
+}
+
+.code {
+  /*background: black;*/
+  color: #CCC;
+}
+
+section.colorful {
+  color: white;
+  background-color: rgb(245, 169, 187)
+}
+
+.javascript-yellow {
+  background-color: #f7df1e;
+}
+
+figcaption {
+  font-size: 3.5vw;
+  opacity: 0.6;
+  white-space: nowrap;
+
+  /* Use same height and line-height so element will retain it's size even
+  when it has no textContent (because it's about to be typewritten) */
+  height: 8vh;
+  line-height: 8vh;
+  text-transform: uppercase;
+}
+
+.colorful figcaption {
+  opacity: 1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1 {
+  font-size: 14vw;
+  color: white;
+}
+
+h2 {
+  font-size: 9vw;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+h3 {
+  padding-left: 200px;
+  padding-right: 200px;
+  font-size: 6vw;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+small {
+  opacity: 0.6;
+}
+
+.faint {
+  opacity: 0.4;
+}
+
+img.full-screen {
+  object-fit: cover;
+  width: 100%;
+  height: 100%
+}
+
+.emoji {
+  font-size: 100px;
+}

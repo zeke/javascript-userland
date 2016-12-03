@@ -1,0 +1,45 @@
+<div data-parent="marriage">
+
+  <aside>
+    - open source is a benevolent collective force
+    - unbounded by any one company or group or individual
+    - electron is the inevitable result of this force
+    - this is truly a divine union
+  </aside>
+
+  <figure>
+    <!-- <img src="images/chromium-and-node-logos.png"> -->
+    <img src="images/marriage.png" class="couple">
+  </figure>
+
+  <script src="../vendor/starfield.js"></script>
+  <script>
+    var ms = new Starfield()
+    ms.stars = 500
+    ms.minVelocity = 5
+    ms.maxVelocity = 100
+    ms.backgroundColor = '#FFFFFF'
+    ms.colors = ['#CAFFBB', '#3E863D', '#4071D9', '#A2C3FA']
+    ms.initialise(document.getElementById('marriage'))
+    ms.start()
+  </script>
+
+  <style>
+    #marriage.active .couple {
+      animation: drifting linear 10s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      transform-origin: 50% 50%;
+    }
+
+    @keyframes drifting{
+      0% {
+        transform: translate(0,-80vh) rotate(70deg) scale(0.5);
+      }
+      100% {
+        transform: translate(0,80vh) rotate(-70deg) scale(0.5);
+      }
+    }
+  </style>
+
+</div>

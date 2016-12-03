@@ -5,10 +5,12 @@
   <script>
     var container = document.getElementById('home')
     var starfield = new Starfield()
-    starfield.stars = 800
-    starfield.minVelocity = 5
-    starfield.maxVelocity = 60
-    starfield.maxDiameter = 10
+    starfield.stars = 200
+    starfield.minVelocity = 30
+    starfield.maxVelocity = 100
+    starfield.minDiameter = 3
+    starfield.maxDiameter = 20
+    starfield.backgroundColor = '#000'
     starfield.initialise(container)
     starfield.start()
   </script>

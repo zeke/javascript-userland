@@ -12,8 +12,9 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  background-color: #333;
+  background-color: #222;
   color: #FFF;
+  overflow: hidden;
 }
 
 section {
@@ -115,8 +116,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  font-size: 14vw;
-  color: white;
+  font-size: 9vw;
+  /*color: white;*/
+  color: #E8DDCA;
+  /*text-shadow: 1px 1px 30px rgba(240, 255, 30, 1);*/
+  text-shadow: 0 0 4px black, 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 60px black;
 }
 
 h2 {

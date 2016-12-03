@@ -13,6 +13,7 @@ function Starfield () {
   this.maxVelocity = 30
   this.stars = 100
   this.intervalId = 0
+  this.minDiameter = 1
   this.maxDiameter = 4
   this.backgroundColor = '#000000'
   this.colors = require('nice-color-palettes')[5]
@@ -50,7 +51,7 @@ Starfield.prototype.start = function () {
     stars[i] = new Star(
       Math.random() * this.width,
       Math.random() * this.height,
-      Math.random() * (this.maxDiameter - 1) + 1,
+      Math.random() * (this.maxDiameter - 1) + this.minDiameter,
       (Math.random() * (this.maxVelocity - this.minVelocity)) + this.minVelocity,
       this.colors[Math.floor(Math.random() * this.colors.length)]
     )
@@ -80,7 +81,7 @@ Starfield.prototype.update = function () {
       this.stars[i] = new Star(
         Math.random() * this.width,
         0,
-        Math.random() * (this.maxDiameter - 1) + 1,
+        Math.random() * (this.maxDiameter - 1) + this.minDiameter,
         (Math.random() * (this.maxVelocity - this.minVelocity)) + this.minVelocity,
         this.colors[Math.floor(Math.random() * this.colors.length)]
       )
@@ -99,12 +100,28 @@ Starfield.prototype.draw = function () {
   //	Draw stars.
   for (var i = 0; i < this.stars.length;i++) {
     var star = this.stars[i]
-
     ctx.fillStyle = star.color
-    ctx.beginPath()
-    ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI)
-    ctx.fill()
+    ctx.strokeStyle = '#FFFF00'
+    polygon(ctx, star.x, star.y, star.size, 6, Math.PI/2)
   }
+}
+
+function polygon (ctx, x, y, radius, sides, startAngle, anticlockwise) {
+  if (sides < 3) return
+  var a = (Math.PI * 2) / sides
+  a = anticlockwise ? -a : a
+  ctx.save()
+  ctx.translate(x, y)
+  ctx.rotate(startAngle || 0)
+  ctx.moveTo(radius, 0)
+  ctx.beginPath()
+  for (var i = 1; i <= sides; i++) {
+    ctx.lineTo(radius * Math.cos(a * i), radius * Math.sin(a * i))
+  }
+  ctx.closePath()
+  ctx.fill()
+  // ctx.stroke()
+  ctx.restore()
 }
 
 function Star (x, y, size, velocity, color) {

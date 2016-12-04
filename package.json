@@ -1,6 +1,6 @@
 {
-  "name": "exploring-userland",
-  "productName": "Exploring Userland",
+  "name": "javascript-userland",
+  "productName": "JavaScript Userland",
   "version": "1.0.0",
   "description": "An Electron demo for dotJS.io Paris 2016",
   "main": "main.js",
@@ -8,7 +8,7 @@
     "start": "electron .",
     "test": "mocha && standard"
   },
-  "repository": "https://github.com/zeke/exploring-userland",
+  "repository": "https://github.com/zeke/javascript-userland",
   "keywords": [
     "electron",
     "github",

@@ -1,0 +1,18 @@
+<div data-parent="fin">
+  <h1 style="color:white">Happy hacking!</h1>
+
+  <script src="../vendor/starfield.js"></script>
+  <script>
+    var container = document.getElementById('fin')
+    var starfield = new Starfield()
+    starfield.stars = 200
+    starfield.minVelocity = 30
+    starfield.maxVelocity = 80
+    starfield.minDiameter = 2
+    starfield.maxDiameter = 15
+    starfield.backgroundColor = '#222'
+    starfield.colors = require('nice-color-palettes')[10]
+    starfield.initialise(container)
+    starfield.start()
+  </script>
+</div>

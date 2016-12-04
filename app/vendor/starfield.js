@@ -50,7 +50,8 @@ Starfield.prototype.start = function () {
   for (var i = 0; i < this.stars; i++) {
     stars[i] = new Star(
       Math.random() * this.width,
-      Math.random() * this.height,
+      // Place beyond the top and bottom edges of screen...
+      Math.random() * (this.height + (this.maxDiameter * 2)) - this.maxDiameter,
       Math.random() * (this.maxDiameter - 1) + this.minDiameter,
       (Math.random() * (this.maxVelocity - this.minVelocity)) + this.minVelocity,
       this.colors[Math.floor(Math.random() * this.colors.length)]
@@ -77,10 +78,10 @@ Starfield.prototype.update = function () {
     var star = this.stars[i]
     star.y += dt * star.velocity
     //	If the star has moved from the bottom of the screen, spawn it at the top.
-    if (star.y > this.height) {
+    if (star.y > this.height+100) {
       this.stars[i] = new Star(
         Math.random() * this.width,
-        0,
+        -this.maxDiameter,
         Math.random() * (this.maxDiameter - 1) + this.minDiameter,
         (Math.random() * (this.maxVelocity - this.minVelocity)) + this.minVelocity,
         this.colors[Math.floor(Math.random() * this.colors.length)]

@@ -3,6 +3,8 @@ const Config = require('electron-config')
 const config = new Config()
 let win
 
+require('electron-debug')()
+
 app.on('ready', () => {
   let opts = {show: false}
   Object.assign(opts, config.get('winBounds'))

@@ -69,14 +69,13 @@ pre {
 }
 
 code {
-  font-family: Consolas, "Liberation Mono", Menlo, Monaco, Courier, monospace;
+  font-family: "Droid Sans Mono", Consolas, "Liberation Mono", Menlo, Monaco, Courier, monospace;
   line-height: 1.4;
   font-size: 4vw;
 }
 
 .code {
-  /*background: black;*/
-  color: #CCC;
+  color: #DDD;
 }
 
 section.colorful {
@@ -117,16 +116,16 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
   font-size: 9vw;
-  /*color: white;*/
-  color: #E8DDCA;
-  /*text-shadow: 1px 1px 30px rgba(240, 255, 30, 1);*/
+  color: white;
+  text-transform: uppercase;
   text-shadow: 0 0 4px black, 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 60px black;
 }
 
 h2 {
-  font-size: 9vw;
+  font-size: 8vw;
   opacity: 1;
   text-transform: uppercase;
+  letter-spacing: 0.1vw;
 }
 
 h3 {
@@ -146,13 +145,18 @@ small {
 }
 
 .faint {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 img.full-screen {
   object-fit: cover;
   width: 100%;
   height: 100%
+}
+
+img.full-width {
+  object-fit: cover;
+  width: 100%;
 }
 
 .emoji {

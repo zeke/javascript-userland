@@ -1,0 +1,22 @@
+<div data-parent="package-count">
+  <h2><span id="package-count-figure">360,000</span> packages</h2>
+
+  <script>
+    var packageCountInterval = null
+
+    require('in-view')('#package-count')
+      .on('enter', section => {
+        document.querySelector('#package-count-figure').innerHTML = "361,237"
+        packageCountInterval = setInterval(updatePackageCount, 20)
+      })
+      .on('exit', section => {
+        clearInterval(packageCountInterval)
+      })
+
+    function updatePackageCount () {
+      var el = document.querySelector('#package-count-figure')
+      var count = Number(el.innerHTML.replace(/\D/g, ''))
+      el.innerHTML = (++count).toLocaleString()
+    }
+  </script>
+</div>

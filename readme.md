@@ -45,8 +45,8 @@ Links to things mentioned in the talk:
 To run the Electron app locally:
 
 ```sh
-git clone https://github.com/zeke/electron-universe
-cd electron-universe
+git clone https://github.com/zeke/javascript-userland
+cd javascript-userland
 npm i && npm start
 ```
 

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'gidole';
-  src: url('fonts/gidolinya-regular.woff') format('woff');
+  src: url('fonts/gidole.woff') format('woff');
 }
 
 * {
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'DIN Condensed', 'gidole';
+  font-family: 'gidole';
   margin: 0;
   padding: 0;
   position: relative;
@@ -122,10 +122,9 @@ h1 {
 }
 
 h2 {
-  font-size: 8vw;
+  font-size: 7vw;
   opacity: 1;
   text-transform: uppercase;
-  letter-spacing: 0.1vw;
 }
 
 h3 {
